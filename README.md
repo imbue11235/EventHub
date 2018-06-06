@@ -39,31 +39,35 @@ eventHub.trigger(SomeErrorEvent(message: "Fatal and dangerous error", code: 500)
 ```
 
 ## Usage
-1. Initialize the EventHub class on a `DispatchQueue`. Add the `EventHub` to a global scope (e.g. shared instance), for cross-events/listeners, or use it in an internal scope
+1. Import the library
+```swift
+import SwiftEventHub
+```
+2. Initialize the EventHub class on a `DispatchQueue`. Add the `EventHub` to a global scope (e.g. shared instance), for cross-events/listeners, or use it in an internal scope
 ```swift 
 let hub = EventHub(queue: .global())
 ```
-2. Define events by making them comply to the `Event` protocol
+3. Define events by making them comply to the `Event` protocol
 
 ```swift
 struct MyEvent: Event {}
 ```
 
-3. Subscribe to the events either by callback or listener (see examples above)
+4. Subscribe to the events either by callback or listener (see examples above)
 ```swift 
 hub.subscribe { (event: MyEvent) in 
     // Do something with the event
 }
 ```
 
-4. Trigger events by calling the method `.trigger(event: Event)`
+5. Trigger events by calling the method `.trigger(event: Event)`
 ```swift
 hub.trigger(MyEvent())
 ```
 
-5. The events triggered are distributed to all listeners attached to the hub, listening for that specific event.
+6. The events triggered are distributed to all listeners attached to the hub, listening for that specific event.
 
-6. To unsubscribe, the returned UUID from the `.subscribe` method, can be used
+7. To unsubscribe, the returned UUID from the `.subscribe` method, can be used
 ```swift 
 let subscription = hub.subscribe { // ... }
 hub.unsubscribe(subscription)
