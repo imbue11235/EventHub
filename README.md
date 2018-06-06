@@ -3,15 +3,6 @@
 Simple implementation of an EventHub in Swift.
 Supports callbacks and listeners.
 
-## Installation
-With CocoaPods:
-```
-pod 'SwiftEventHub'
-```
-
-## Requirements
-Swift 4.1
-
 ## Examples
 
 ### Callback
@@ -82,4 +73,12 @@ let subscription = hub.subscribe { // ... }
 hub.unsubscribe(subscription)
 ```
 
+## Requirements
+Swift 4.1
+
+## Installation
+With CocoaPods:
+```
+pod 'SwiftEventHub'
+```
 
