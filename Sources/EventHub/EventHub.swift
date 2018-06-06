@@ -1,13 +1,13 @@
 import Foundation
 
-final class EventHub {
+final public class EventHub {
     
-    typealias Callback<T: Event> = (T) -> ()
+    public typealias Callback<T: Event> = (T) -> ()
     
     private let queue: DispatchQueue
     private var subscriptions: [Subscriber]
     
-    init(queue: DispatchQueue) {
+    public init(queue: DispatchQueue) {
         self.queue = queue
         self.subscriptions = [Subscriber]()
     }
