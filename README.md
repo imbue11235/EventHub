@@ -1,7 +1,6 @@
 #  Swift EventHub
 
-Simple implementation of an EventHub in Swift.
-Supports callbacks and listeners.
+Simple typesafe EventHub in Swift using callbacks/listeners defined by generic types.
 
 ## Examples
 
