@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftEventHub'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'EventHub vfor swift'
 
   s.description      = <<-DESC
